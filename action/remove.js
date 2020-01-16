@@ -7,17 +7,17 @@ module.exports = async () => {
   const config = readFile(configFilePath);
   const { key } = await prompt({
     name: 'key',
-    message: '请选择要删除的用户',
+    message: '请选择要移除的账号',
     type: 'list',
     choices: Object.keys(config)
   });
   const { bool } = await prompt({
     name: 'bool',
-    message: `将要删除 ${key}, 请确认`,
+    message: `将要移除 ${key}, 请确认`,
     type: 'confirm',
   });
   if (!bool) process.exit(0);
   delete config[key];
   writeFile(configFilePath, config);
-  success('恭喜，删除成功！');
+  success('恭喜，移除成功！');
 }

@@ -7,7 +7,7 @@ module.exports = async () => {
   const config = readFile(configFilePath);
   const { key } = await prompt({
     name: 'key',
-    message: '请选择要修改的用户',
+    message: '请选择要修改的账号',
     type: 'list',
     choices: Object.keys(config)
   });
@@ -22,9 +22,17 @@ module.exports = async () => {
 
   const { email } = await prompt({
     name: 'email',
-    message: '邮箱地址',
+    message: '邮箱',
     type: 'input',
     default: userInfo.email,
+    validate: function (input) {
+      const done = this.async();
+      if (/^([A-Za-z0-9_\-\\.])+@([A-Za-z0-9_\-\\.])+\.([A-Za-z]{2,4})$/.test(input)) {
+        done(null, true);
+      } else {
+        done('请输入正确的邮箱');
+      }
+    }
   });
   if (email === '') process.exit(0);
   config[key] = {

@@ -14,7 +14,7 @@ module.exports = async () => {
 
   const { user } = await prompt({
     name: 'user',
-    message: `您的用户名`,
+    message: `用户名`,
     type: 'input',
   });
   if (user === '') process.exit(0);
@@ -28,7 +28,7 @@ module.exports = async () => {
 
   const { email } = await prompt({
     name: 'email',
-    message: '邮箱地址',
+    message: '邮箱',
     type: 'input',
     validate: function (input) {
       const done = this.async();
@@ -45,7 +45,7 @@ module.exports = async () => {
   const key = `${registry}::${user}`;
   if (config[key]) {
     warning(`${key} 已经存在！`);
-    process.exit(1);
+    process.exit(0);
   }
   config[key] = {
     registry,
@@ -54,5 +54,5 @@ module.exports = async () => {
     email,
   };
   writeFile(configFilePath, config);
-  success('恭喜，用户添加成功！');
+  success('恭喜，添加成功！');
 }
