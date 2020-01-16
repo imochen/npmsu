@@ -1,0 +1,34 @@
+{
+  "name": "npmsu",
+  "version": "1.0.0",
+  "description": "npm switch user and registry",
+  "main": "index.js",
+  "bin": {
+    "npmsu": "./bin/npmsu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imochen/npmsu.git"
+  },
+  "keywords": [
+    "npm login",
+    "npm switch user",
+    "switch user",
+    "switch registry",
+    "switch account"
+  ],
+  "author": "mochen <mochen.china@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imochen/npmsu/issues"
+  },
+  "homepage": "https://github.com/imochen/npmsu#readme",
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^3.0.0",
+    "dayjs": "^1.8.19",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.3",
+    "yargs": "^15.1.0"
+  }
+}

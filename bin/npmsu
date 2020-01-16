@@ -1,0 +1,13 @@
+#! /usr/bin/env node
+
+const yargs = require('yargs');
+const noop = () => { };
+
+yargs
+  .command('$0', '', noop, require('../action/main'))
+  .command('add', '添加一个用户', noop, require('../action/add'))
+  .command('remove', '移除一个用户', noop, require('../action/remove'))
+  .command('config', '编辑用户信息', noop, require('../action/config'))
+  .version()
+  .help('help')
+  .argv;
