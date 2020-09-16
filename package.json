@@ -26,9 +26,9 @@
   "dependencies": {
     "boxen": "^4.2.0",
     "chalk": "^3.0.0",
-    "dayjs": "^1.8.19",
+    "dayjs": "^1.8.35",
     "fs-extra": "^8.1.0",
-    "inquirer": "^7.0.3",
-    "yargs": "^15.1.0"
+    "inquirer": "^7.3.3",
+    "yargs": "^15.4.1"
   }
 }
